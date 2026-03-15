@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>testing_1_by_faizun</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #238636, #2ea043);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+    }
+
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #58a6ff, #bc8cff, #ff7b72);
+      border-radius: 16px 16px 0 0;
+    }
+
+    .project-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #1f6feb, #388bfd);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 16px rgba(56, 139, 253, 0.3);
+    }
+
+    .project-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #e6edf3;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      word-break: break-word;
+    }
+
+    .project-name span {
+      color: #58a6ff;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #8b949e;
+      margin-bottom: 2rem;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: #21262d;
+      margin: 1.5rem 0;
+    }
+
+    .repo-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 0.9rem 1.4rem;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      cursor: default;
+    }
+
+    .repo-section:hover {
+      border-color: #58a6ff;
+      background: #111820;
+    }
+
+    .repo-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .repo-label {
+      font-size: 0.75rem;
+      color: #8b949e;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-right: 0.2rem;
+    }
+
+    .repo-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #58a6ff;
+      word-break: break-word;
+    }
+
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #e6edf3;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: #8b949e;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .stat-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #2ea043;
+      margin-top: 0.15rem;
+    }
+
+    footer {
+      width: 100%;
+      max-width: 680px;
+      text-align: center;
+      padding: 1.5rem 0 0.5rem;
+      border-top: 1px solid #21262d;
+      margin-top: 1rem;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      color: #8b949e;
+      letter-spacing: 0.03em;
+    }
+
+    footer p strong {
+      color: #bc8cff;
+      font-weight: 600;
+    }
+
+    footer .heart {
+      color: #ff7b72;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 2rem 1.5rem;
+      }
+
+      .project-name {
+        font-size: 1.5rem;
+      }
+
+      .stats-row {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <span class="badge">&#9679; Active Project</span>
+
+    <div class="card">
+
+      <div class="project-icon">&#128187;</div>
+
+      <h1 class="project-name">
+        testing_1_<span>by_faizun</span>
+      </h1>
+      <p class="subtitle">A project crafted with precision and purpose.</p>
+
+      <div class="divider"></div>
+
+      <div class="repo-section">
+        <span class="repo-icon">&#128194;</span>
+        <span class="repo-label">Repo</span>
+        <span class="repo-name">testing_1_by_faizun_repo</span>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-value">v1.0</span>
+          <span class="stat-label">Version</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-dot"></div>
+          <span class="stat-label">Active</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">2025</span>
+          <span class="stat-label">Year</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p><span class="heart">&#9829;</span> Developed by <strong>Royal Bengal AI</strong></p>
+  </footer>
+
+</body>
+</html>
